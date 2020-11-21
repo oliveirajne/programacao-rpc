@@ -10,11 +10,14 @@ html {
     box-sizing: inherit;
   }
   
-  body, h1, h2, h3, h4, h5, h6 {
+  body, h1, h2, h4, h5, h6 {
     margin: 0;
     padding: 0;
     font-weight: normal;
     background-color: #bdc3c8;
+  }
+  h3 {
+    margin: 0;
   }
 
   p {
@@ -23,11 +26,19 @@ html {
   
   ol, ul {
     list-style: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 40px;
+  }
+
+  li {
+    
+    align-items: center;
   }
   
   img {
-    max-width: 100%;
-    height: auto;
+    max-width: 200px;
+    height: 110px;
   }
 
   button {

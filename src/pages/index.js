@@ -29,7 +29,7 @@ function Home() {
 
         api.get(`1337?date=${year}-${month}-${day}`)
             .then( response => {
-            //    console.log(response.data.programme.entries)
+                console.log(response.data.programme.entries)
                 setPrograms(response.data.programme.entries)
             }, [])
 
@@ -78,10 +78,24 @@ function Home() {
                             {programs.map(program => (
 
                                 <li key={program.media_id}>
-                                    <strong>{program.title}</strong>
+                                    <div className={styles.divProgramas}>
+                                        <div className={styles.divImg}>
+                                            <img src={program.custom_info.Graficos.ImagemURL ? program.custom_info.Graficos.ImagemURL : program.custom_info.Graficos.LogoURL}/>
+                                        </div>
+
+                                        <div className={styles.divDetalhes}>
+                                            <h3>{program.start_time}</h3>
+                                            <strong>{program.title}</strong>
+                                            <p>{program.description}</p>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div className={styles.divLinha}></div>    
                                 </li>
                                 
                             ))}
+                            
                         </ul>
                     </div>
 
