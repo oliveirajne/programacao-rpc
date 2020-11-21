@@ -1,0 +1,27 @@
+{
+  "name": "programacao-rpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliveirajne/programacao-rpc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliveirajne/programacao-rpc/issues"
+  },
+  "homepage": "https://github.com/oliveirajne/programacao-rpc#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "moment": "^2.29.1",
+    "next": "^10.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
