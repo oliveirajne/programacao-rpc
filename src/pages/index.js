@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ReactDom from 'react-dom';
 import moment from 'moment';
+import moment_tz from 'moment-timezone';
 
 import styles from '../styles.module.css';
 import api from '../services/api';
@@ -29,7 +30,7 @@ function Home() {
 
         api.get(`1337?date=${year}-${month}-${day}`)
             .then( response => {
-                console.log(response.data.programme.entries)
+            //    console.log(response.data.programme.entries)
                 setPrograms(response.data.programme.entries)
             }, [])
 
@@ -84,7 +85,7 @@ function Home() {
                                         </div>
 
                                         <div className={styles.divDetalhes}>
-                                            <h3>{program.start_time}</h3>
+                                            <h3>{`${(new Date(program.start_time*1000)).getHours()}:${("0" + (new Date(program.start_time*1000)).getMinutes()).substr(-2)}`}</h3>
                                             <strong>{program.title}</strong>
                                             <p>{program.description}</p>
                                         </div>
