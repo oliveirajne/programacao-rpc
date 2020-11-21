@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDom from 'react-dom';
 import moment from 'moment';
 
@@ -7,6 +7,7 @@ import api from '../services/api';
 
 
 function Home() {
+    const [programs, setPrograms] = useState([])
 
     let newDate;
     let day;
@@ -27,27 +28,25 @@ function Home() {
         // console.log(year);
 
         api.get(`1337?date=${year}-${month}-${day}`)
-            .then(function (response) {
-                console.log(response);
-            })
+            .then( response => {
+            //    console.log(response.data.programme.entries)
+                setPrograms(response.data.programme.entries)
+            }, [])
 
     }
 
     function ontem() {
         newDate = moment().subtract(1, 'days');
-
         handleProg()
     }
 
     function hoje() {
         newDate = moment();
-
         handleProg()
     }
 
     function amanha() {
         newDate = moment().add(1, 'days');
-
         handleProg()
     }
 
@@ -75,7 +74,15 @@ function Home() {
                     </div>            
                     
                     <div className={styles.grade}>
+                        <ul>
+                            {programs.map(program => (
 
+                                <li key={program.media_id}>
+                                    <strong>{program.title}</strong>
+                                </li>
+                                
+                            ))}
+                        </ul>
                     </div>
 
                 </div>
