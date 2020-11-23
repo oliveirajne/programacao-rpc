@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import ReactDom from 'react-dom';
 import moment from 'moment';
-import moment_tz from 'moment-timezone';
 
 import styles from '../styles.module.css';
 import api from '../services/api';
