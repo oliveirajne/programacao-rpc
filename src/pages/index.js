@@ -84,7 +84,7 @@ function Home() {
 
                                         <div className={styles.divDetalhes}>
                                             <h3>{`${(new Date(program.start_time*1000)).getHours()}:${("0" + (new Date(program.start_time*1000)).getMinutes()).substr(-2)}`}</h3>
-                                            <strong>{program.title}</strong>
+                                            <h2>{program.title}</h2>
                                             <p>{program.description}</p>
                                         </div>
                                     </div>
