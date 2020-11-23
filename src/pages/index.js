@@ -77,12 +77,14 @@ function Home() {
                             {programs.map(program => (
 
                                 <li key={program.media_id}>
-                                    <div className={styles.divProgramas}>
+                                    <div className={ ( (Date.now() / 1000) > program.start_time && (Date.now() / 1000) < program.end_time ) ? styles.divProgramasNow : styles.divProgramas }>
                                         <div className={styles.divImg}>
                                             <img src={program.custom_info.Graficos.ImagemURL ? program.custom_info.Graficos.ImagemURL : program.custom_info.Graficos.LogoURL}/>
                                         </div>
 
                                         <div className={styles.divDetalhes}>
+                                            <strong className={styles.strongNow}>{ ( (Date.now() / 1000) > program.start_time && (Date.now() / 1000) < program.end_time ) ? 'EM EXIBIÇÃO AGORA!': '' }</strong>
+                                            { console.log(Date.now() / 1000) }
                                             <h3>{`${(new Date(program.start_time*1000)).getHours()}:${("0" + (new Date(program.start_time*1000)).getMinutes()).substr(-2)}`}</h3>
                                             <h2>{program.title}</h2>
                                             <p>{program.description}</p>

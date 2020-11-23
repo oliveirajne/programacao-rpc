@@ -65,6 +65,13 @@
     align-items: center;
     padding: 5px 0px 5px 0px;
 }
+.divProgramasNow {
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 5px 10px;
+    transform: scale(1.1);
+    background-color: #d9f2d9;
+}
 .divImg {
     width: 200px;
     height: 115px;
@@ -79,4 +86,8 @@
     height: 1px;
     width: 100%;
     background-color: #bdd563;
+}
+.strongNow {
+    color: #339933;
+    
 }
