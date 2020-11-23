@@ -37,8 +37,10 @@ html {
   }
   
   img {
-    max-width: 200px;
     height: 110px;
+    width: auto;
+    max-width: 200px;
+    
   }
 
   button {
